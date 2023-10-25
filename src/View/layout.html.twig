@@ -13,7 +13,10 @@
 </head>
 
 <body>
+    {% include 'Include/_navbar.html.twig' %}
+    <main class="uk-container">
     {% block content %}{% endblock %}
+    </main>
     {% block javascript %}{% endblock %}
 </body>
 </html>

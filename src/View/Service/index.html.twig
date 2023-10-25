@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<div class="uk-child-width-1-2@m uk-grid ">
+{% for service in services %}
+    <a href="/service/show?id={{ service.id }}">
+        <div>
+            <div class="uk-inline">
+                <img src="{{ service.image }}" width="1800" height="1200" alt="{{ service.name }}">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                    <h2> {{ service.name }} </h2>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+    
+{% endblock %}
