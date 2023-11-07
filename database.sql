@@ -48,7 +48,7 @@ VALUES (
   Simplifiez-vous la vie, Confiez-Nous s\'organise en fonction de vos besoins,
   pour des missions à domicile ponctuelles ou régulières.',
 	150,
- '/assets/images/bricolage.jpg'
+ '/assets/images/bricolage2.jpeg'
 ), (
 	'Petits travaux de jardinage',
 	'Vous désirez un jardin bien entretenu, créer un massif de fleurs... 
@@ -97,6 +97,31 @@ ALTER TABLE `item`
 --
 ALTER TABLE `item`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `pseudo` varchar(45) DEFAULT NULL,
+  `firstname` varchar(45) DEFAULT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'marty@wilders.com','$2y$10$mmeOScAl9ZOhi.zrbhD9nuGjo0ExFkCZRUrhW.Y1bKbNZ7iwsexLy','Marty','Marty','McFly');
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

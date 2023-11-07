@@ -2,19 +2,17 @@
 
 {% block content %}
 
-<div class="uk-child-width-1-2@m uk-grid ">
+<div class="uk-child-width-1-2@m uk-grid uk-grid-column-large uk-grid-row-large" data>
 {% for service in services %}
-    <a href="/service/show?id={{ service.id }}">
-        <div>
-            <div class="uk-inline">
-                <img src="{{ service.image }}" width="1800" height="1200" alt="{{ service.name }}">
-                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
-                    <h2> {{ service.name }} </h2>
-                </div>
+    <a href="/service/show?id={{ service.id }}"/>
+        <div class="uk-inline uk-image-container">
+            <img src="{{ service.image }}" alt="">
+             <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                <p>{{ service.name }}</p>
             </div>
         </div>
-    </a>
-    {% endfor %}
+    </a>  
+ {% endfor %}   
 </div>
     
 {% endblock %}

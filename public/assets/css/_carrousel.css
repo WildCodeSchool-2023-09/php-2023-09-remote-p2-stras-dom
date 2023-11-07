@@ -18,3 +18,8 @@ swiper-container {
     height: 100%;
     object-fit: cover;
   }
+
+textarea {
+    resize: none;
+    height : 20rem;
+}
