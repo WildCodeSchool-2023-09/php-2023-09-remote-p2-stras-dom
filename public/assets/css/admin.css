@@ -1,7 +1,11 @@
 header {
-    background-color: blue;
+    background-color: #1c4858;
 }
 
 main {
     background-color: #fbfbfbfb;
+}
+
+.yk-horizontale-menu {
+    color: white;
 }
