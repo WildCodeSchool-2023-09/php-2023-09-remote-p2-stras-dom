@@ -1,0 +1,53 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+
+
+<div uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">test</h3>
+            <a class="uk-button uk-button-primary" href="/admin/prestations/new">ajouter un nouveau service</a>
+<table id="yavuz" class="uk-table uk-table-hover uk-table-divider">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>image</th>
+            <th>options</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.name }}</td>
+                <td>{{ service.description }}</td>
+                <td>{{ service.price }}</td>
+                <td><img src="{{ service.image }}" width="100px" alt="{{ service.name }}" /></td>
+                <td>
+                <a href="/admin/prestations/edit?id={{ service.id }}" uk-icon="icon: pencil"></a> 
+                <a href="/admin/prestations/delete?id={{ service.id }}" uk-icon="icon: trash"></a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">pas données</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{{ parent()}}
+    <script>
+    new DataTable('#yavuz');
+    </script>
+{% endblock %}

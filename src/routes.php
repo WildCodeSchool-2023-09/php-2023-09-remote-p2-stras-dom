@@ -19,4 +19,8 @@ return [
     'connexion' => ['SecurityController', 'login',],
     'logout' => ['SecurityController', 'logout',],
     'admin/dashboard' => ['DashboardController', 'index',],
+    'admin/prestations' => ['PrestationsController', 'index',],
+    'admin/prestations/new' => ['PrestationsController', 'new',],
+    'admin/prestations/edit' => ['PrestationsController', 'edit', ['id']],
+    'admin/prestations/delete' => ['PrestationsController', 'delete', ['id']],
 ];
