@@ -1,18 +1,22 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
-<div class="uk-child-width-1-2@m uk-grid uk-grid-column-large uk-grid-row-large" data>
-{% for service in services %}
-    <a href="/service/show?id={{ service.id }}"/>
-        <div class="uk-inline uk-image-container">
-            <img src="{{ service.image }}" alt="">
-             <div class="uk-overlay uk-overlay-primary uk-position-bottom">
-                <p>{{ service.name }}</p>
-            </div>
-        </div>
-    </a>  
- {% endfor %}   
-</div>
-    
+	<section class="uk-container">
+		<div class="uk-child-width-1-3@m" uk-grid>
+			{% for service in services %}
+				<a href="/service/show?id={{ service.id }}">
+					<div>
+						<div class="uk-card uk-card-default card-default">
+							<div class="uk-card-media-top card-media-top">
+								<img src="{{ service.image }}" alt="{{ service.name }}" class="card-img">
+							</div>
+							<div class="uk-card-body card-body">
+								<h3 class="uk-card-title card-title">{{ service.name }}</h3>
+							</div>
+						</div>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}

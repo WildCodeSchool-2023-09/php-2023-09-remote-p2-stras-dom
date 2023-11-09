@@ -1,36 +1,35 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+	<section class="uk-container">
+		<h2 class="uk-heading-line uk-text-center">
+			<span>Demandez un rendez-vous</span>
+		</h2>
 
-	<h2 class="uk-heading-line uk-text-center">
-		<span>Demandez un rendez-vous</span>
-	</h2>
-
-	<form class=" full-width-form">
-
-		<div class="uk-margin">
-			<label class="uk-form-label" for="firstname">Prénom</label>
-			<div class="uk-form-controls">
-				<input class="uk-input uk-form-width-large" type="text" id="firstname" name="firstname" placeholder="Votre Prénom" required>
-			</div>
-
+		<form class=" full-width-form">
 
 			<div class="uk-margin">
-				<label class="uk-form-label" for="email">Adresse e-mail</label>
+				<label class="uk-form-label" for="firstname">Prénom</label>
 				<div class="uk-form-controls">
-					<input class="uk-input uk-width-1-1" type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+					<input class="uk-input uk-width-1-1" type="text" id="firstname" name="firstname" placeholder="Votre Prénom" required>
 				</div>
-			</div>
 
-			<div class="uk-margin uk-width-1-1">
-				<label class="uk-form-label" for="message">Message</label>
-				<div class="uk-form-controls">
-					<textarea class="uk-textarea uk-width-1-1" id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="email">Adresse e-mail</label>
+					<div class="uk-form-controls">
+						<input class="uk-input uk-width-1-1" type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+					</div>
 				</div>
-			</div>
 
-			<button class="uk-button uk-button-primary" type="submit">Envoyer</button>
+				<div class="uk-margin uk-width-1-1">
+					<label class="uk-form-label" for="message">Message</label>
+					<div class="uk-form-controls">
+						<textarea class="uk-textarea uk-width-1-1" id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+					</div>
+				</div>
 
-		</form>
+				<button class="uk-button uk-button-primary" type="submit">Envoyer</button>
 
+			</form>
+		</section>
 	{% endblock %}

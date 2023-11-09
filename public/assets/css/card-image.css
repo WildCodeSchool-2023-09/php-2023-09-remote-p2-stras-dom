@@ -1,7 +1,26 @@
 .uk-image-container {
     height: 400px;
 }
+.card-default {
+    width: 400px;
+}
 
-.test {
-    margin-top: 2rem;
+.card-media-top {
+    height: 300px;
+}
+
+.card-img {
+    height: 300px;
+}
+
+.card-body {
+    background-color: var(--primary);
+}
+
+h3.uk-card-title.card-title {
+    color: white;
+}
+
+h3.uk-card-title.card-title:hover {
+    text-decoration: none;
 }

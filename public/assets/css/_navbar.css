@@ -12,3 +12,7 @@
 .vr-navbar-background {
     background-color: var(--primary) !important;
 }
+
+.dropdown {
+    background-color: var(--primary);
+}

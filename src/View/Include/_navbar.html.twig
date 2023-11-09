@@ -10,21 +10,18 @@
 			<li class="uk-parent">
 				<a href="/devis">Demandez un devis</a>
 			</li>
-			{% if session.isAdmin == true %}
-				<li>
-					<a href="/admin/dashboard">Dashboard</a>
-				</li>
-			{% endif %}
 			{% if session.isLogin == true %}
-				<li class="uk-nav-item uk-parent">
-					<a href="#">Mon Compte
+				<li uk-dropnav="mode: click">
+					<a href="">Mon Compte
 						<span uk-icon="icon: triangle-down"></span>
 					</a>
-					<div class="uk-navbar-dropdown">
-						<ul class="uk-nav uk-navbar-dropdown-nav">
-							<li>
-								<a href="/admin/dashboard">Dashboard</a>
-							</li>
+					<div class="uk-dropdown dropdown">
+						<ul class="uk-nav uk-dropdown-nav">
+							{% if session.isAdmin == 1 %}
+								<li>
+									<a href="/admin/dashboard">Dashboard</a>
+								</li>
+							{% endif %}
 							<li>
 								<a href="/logout">Logout</a>
 							</li>

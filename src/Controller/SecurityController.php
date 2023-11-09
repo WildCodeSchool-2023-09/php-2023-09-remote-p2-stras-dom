@@ -22,7 +22,8 @@ class SecurityController extends AbstractController
             $userManager = new UserManager();
             $user = $userManager->selectOneByEmail($credentials['email']);
             if ($user && password_verify($credentials['password'], $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['isLogin'] = true;
+                $_SESSION['isAdmin'] = $user['isAdmin'];
                 header('Location: /');
             }
         }

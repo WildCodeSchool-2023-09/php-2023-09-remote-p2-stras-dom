@@ -71,7 +71,7 @@ VALUES (
   Simplifiez-vous la vie, Confiez-Nous s\'organise en fonction de vos besoins,
   pour des missions à domicile ponctuelles ou régulières.',
         150,
-        '/assets/images/bricolage2.jpeg'
+        '/assets/images/bricolage.jpg'
     ), (
         'Petits travaux de jardinage',
         'Vous désirez un jardin bien entretenu, créer un massif de fleurs... 
