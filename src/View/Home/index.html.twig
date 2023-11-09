@@ -1,29 +1,76 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 {% endblock %}
 
 {% block content %}
-    <h1>Bienvenue sur Stras Dom</h1>
+	<h1>Bienvenue sur Stras Dom</h1>
 
-    <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true"
-    autoplay-delay="2500" autoplay-disable-on-interaction="false" >
-    <swiper-slide><img src="/assets/images/aide-a-domicile3.jpg" alt="aide a domicile" /></swiper-slide>
-    <swiper-slide><img src="/assets/images/aide-domicile.2.jpg" alt="aide a domicile" /></swiper-slide>
-    <swiper-slide><img src="/assets/images/Aide-domicile.jpg" alt="aide a domicile" /></swiper-slide>
-    <swiper-slide><img src="/assets/images/L-aide-a-domicile6.jpg" alt="aide a domicile" /></swiper-slide>
-  </swiper-container>
+	<swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+		<swiper-slide><img src="/assets/images/aide-a-domicile3.jpg" alt="aide a domicile"/></swiper-slide>
+		<swiper-slide><img src="/assets/images/aide-domicile.2.jpg" alt="aide a domicile"/></swiper-slide>
+		<swiper-slide><img src="/assets/images/Aide-domicile.jpg" alt="aide a domicile"/></swiper-slide>
+		<swiper-slide><img src="/assets/images/L-aide-a-domicile6.jpg" alt="aide a domicile"/></swiper-slide>
+	</swiper-container>
 
-  <section>
-    
-  </section>
-   
+	<section class="uk-section uk-margin-medium-top uk-background-muted section-home-bg">
+		<div class=" uk-container uk-flex uk-flex-middle uk-flex-center">
+			<div class="uk-width-1-2@s uk-text-center uk-text-lead">
+				<p>Confiez-nous votre temps libre ! Nous vous offrons des services à la personne 
+																																																																																																														        de qualité pour que vous puissiez profiter pleinement de votre vie. Notre personnel 
+																																																																																																														        qualifié assure discrétion et professionnalisme à chaque étape.
+				</p>
+			</div>
+			<div class="uk-width-1-2@s uk-flex uk-flex-center">
+				<img src="/assets/images/Aide-domicile.jpg" class="uk-width-large" alt="">
+			</div>
+		</div>
+	</section>
+	<section class="uk-section uk-margin-medium-top">
+		<div class="uk-container uk-flex uk-flex-middle uk-flex-center">
+			<div class="uk-width-1-2@s uk-flex uk-flex-center">
+				<img src="/assets/images/credit-dimpot.png" class="uk-width-large" alt="">
+			</div>
+			<div class="uk-width-1-2@s uk-text-center uk-text-lead">
+				<p>Bénéficiez de 50 % de réduction ou de crédit d’impôt en utilisant les services 
+																																																																																																				        d’une entreprise ayant l'obtention: d'une déclaration; d'un agrément auprès des 
+																																																																																																				        services de l'État; d'une autorisation auprès des conseils départementaux.</p>
+			</div>
+		</div>
+	</section>
+	<section class="uk-section uk-margin-medium-top uk-background-muted section-home-bg">
+		<h2 class="uk-heading-small uk-margin-bottom uk-text-center">Pourquoi Nous Choisir ?</h2>
+		<div class="uk-container uk-flex uk-flex-middle uk-flex-center">
+			<div class="uk-width-1-2@s uk-text-center uk-text-lead">
+				<ul class="uk-list uk-list-bullet uk-text-left uk-margin-bottom">
+					<li>Expertise Qualifiée: Nos aides à domicile sont des experts qualifiés et empathiques, répondant à vos besoins spécifiques.</li>
+					<li>Confiance et Discrétion: Votre vie privée est notre priorité, notre personnel est sélectionné avec soin.</li>
+					<li>Assistance Complète: Tâches ménagères, soins aux personnes âgées, soutien aux personnes handicapées.</li>
+				</ul>
+			</div>
+			<div class="uk-width-1-2@s uk-flex uk-flex-center">
+				<img src="/assets/images/aide-a-domicile-prestations.jpeg" class="uk-width-large" alt="">
+			</div>
+		</div>
+	</section>
+	<section class="uk-section uk-margin-small-top">
+		<h2 class="uk-heading-small uk-margin-medium-bottom uk-text-center">Vous bénéficiez également de :</h2>
+		<div class="uk-container uk-flex uk-flex-middle uk-flex-center">
+			<div class="uk-width-1-2@s uk-flex uk-flex-center">
+				<img src="" class="uk-width-large" alt="">
+			</div>
+			<div class="uk-width-1-2@s uk-text-center uk-text-lead">
+				<ul class="uk-list uk-list-bullet uk-text-left uk-margin-bottom">
+					<li>Service Personnalisé: Des plans de services adaptés à vos besoins individuels, pour une assistance sur mesure.</li>
+					<li>Équipe Attentionnée: Un personnel chaleureux et attentionné, prêt à vous aider dans toutes les situations.</li>
+					<li>Flexibilité de Paiement: Des options de paiement flexibles pour s'adapter à votre budget.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 {% endblock %}
 
 {% block javascript %}
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 {% endblock %}

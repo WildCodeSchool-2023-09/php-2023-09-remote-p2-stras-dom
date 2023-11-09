@@ -17,25 +17,15 @@ class SecurityController extends AbstractController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if ($_POST['username'] === '') {
-                $errors['username'] = 'Veuillez saisir votre username !';
-            }
+            $credentials = array_map('trim', $_POST);
 
-            if ($_POST['password'] === '') {
-                $errors['password'] = 'Veuillez saisir votre password !';
-            }
-
-            if (!$errors) {
-                $userManager = new UserManager();
-                $user = $userManager->userLogin($_POST);
-                if ($user) {
-                    $_SESSION['isLogin'] = true;
-                    $_SESSION['isAdmin'] = $user['isAdmin'];
-                    header('Location: /');
-                }
+            $userManager = new UserManager();
+            $user = $userManager->selectOneByEmail($credentials['email']);
+            if ($user && password_verify($credentials['password'], $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
+                header('Location: /');
             }
         }
-
 
         return $this->twig->render('Security/login.html.twig', ['errors' => $errors]);
     }

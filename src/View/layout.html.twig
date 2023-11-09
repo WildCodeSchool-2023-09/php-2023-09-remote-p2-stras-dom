@@ -12,9 +12,8 @@
 		</head>
 		<body>
 			{% include 'Include/_navbar.html.twig' %}
-			<main class="uk-container"> {% block content %}{% endblock %}
+			<main class=""> {% block content %}{% endblock %}
 				</main>
-				{% include "User/login.html.twig" %}
 				{% block javascript %}
 					<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>

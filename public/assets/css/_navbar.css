@@ -5,6 +5,8 @@
 
 .uk-navbar a, .uk-navbar li a {
     color: white;
+    font-family: var(--font-familary-primary) ;
+
 }
 
 .vr-navbar-background {

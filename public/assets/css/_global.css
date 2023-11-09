@@ -7,3 +7,12 @@ body {
 main {
     padding-top: 5rem;
 }
+
+.section-home-bg
+{
+    background-color: var(--primary);
+}
+
+.section-home-bg p, .section-home-bg h2, .section-home-bg li {
+    color: var(--secondary);
+}

@@ -9,15 +9,12 @@ class UserManager extends AbstractManager
 {
     public const TABLE = 'user';
 
-    public function userLogin(array $username)
+    public function selectOneByEmail(string $email)
     {
-        // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " 
-        WHERE username=:username AND password=:password");
-        $statement->bindValue('username', $username['username'], \PDO::PARAM_STR);
-        $statement->bindValue('password', $username['password'], \PDO::PARAM_STR);
+        $query = "SELECT * FROM " . self::TABLE . " WHERE email=:email";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':email', $email);
         $statement->execute();
-
         return $statement->fetch();
     }
 

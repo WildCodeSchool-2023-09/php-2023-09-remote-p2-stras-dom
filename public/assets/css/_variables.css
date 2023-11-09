@@ -1,4 +1,7 @@
 :root {
     --primary: #072A40;
     --secondary: white;
+    --font-familary-primary : 'Livvic', -apple-system,BlinkMacSystemFont,"Segoe UI",'Roboto',"Helvetica Neue",
+    Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" ;
+    --font-familary-secondary : 
 }

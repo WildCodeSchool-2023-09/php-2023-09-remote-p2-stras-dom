@@ -16,8 +16,20 @@
 				</li>
 			{% endif %}
 			{% if session.isLogin == true %}
-				<li>
-					<a href="/logout">Logout</a>
+				<li class="uk-nav-item uk-parent">
+					<a href="#">Mon Compte
+						<span uk-icon="icon: triangle-down"></span>
+					</a>
+					<div class="uk-navbar-dropdown">
+						<ul class="uk-nav uk-navbar-dropdown-nav">
+							<li>
+								<a href="/admin/dashboard">Dashboard</a>
+							</li>
+							<li>
+								<a href="/logout">Logout</a>
+							</li>
+						</ul>
+					</div>
 				</li>
 			{% else %}
 				<li>
