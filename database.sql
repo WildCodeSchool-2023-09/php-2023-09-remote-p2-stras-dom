@@ -82,6 +82,33 @@ VALUES (
         '/assets/images/jardinage.jpeg'
     );
 
+CREATE TABLE
+    IF NOT EXISTS `user` (
+        `id` INT NOT NULL AUTO_INCREMENT,
+        `firstname` VARCHAR(100) NOT NULL,
+        `lastname` VARCHAR(100) NOT NULL,
+        `email` VARCHAR(255) NOT NULL,
+        `password` varchar(255) DEFAULT NULL,
+        `adresse` TEXT NOT NULL,
+        `isAdmin` BOOLEAN DEFAULT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `email_UNIQUE` (`email`)
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+CREATE TABLE
+    IF NOT EXISTS `reservation` (
+        `date` DATETIME NOT NULL,
+        `is_disponible` BOOLEAN NOT NULL,
+        `user_id` INT,
+        `service_id` INT,
+        CONSTRAINT `fk_reservation_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_reservation_service` FOREIGN KEY (`service_id`) REFERENCES `service` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+INSERT INTO
+    `reservation` (`date`, `is_disponible`)
+VALUES ('2023-11-15 08:00:00', true), ('2023-11-16 10:30:00', true), ('2023-11-17 14:45:00', true), ('2023-11-18 16:20:00', true), ('2023-11-19 09:15:00', true);
+
 --
 
 -- Structure de la table `item`
@@ -142,20 +169,6 @@ DROP TABLE IF EXISTS `user`;
 
 /*!50503 SET character_set_client = utf8mb4 */
 
-;
-
-CREATE TABLE
-    `user` (
-        `id` int NOT NULL AUTO_INCREMENT,
-        `email` varchar(100) DEFAULT NULL,
-        `password` varchar(255) DEFAULT NULL,
-        `firstname` varchar(45) DEFAULT NULL,
-        `lastname` varchar(45) DEFAULT NULL,
-        `isAdmin` BOOLEAN DEFAULT NULL,
-        PRIMARY KEY (`id`),
-        UNIQUE KEY `email_UNIQUE` (`email`)
-    ) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8;
-
 /*!40101 SET character_set_client = @saved_cs_client */
 
 ;
@@ -175,10 +188,11 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user`
 VALUES (
         1,
+        'Vincent',
+        'admin',
         'admin@admin.com',
         '$2y$10$3yG3wiy.m1c3XMiSd6MESu1YzE37dh5vv.DzZyycunzYfqiF42esq',
-        'Vincent',
-        'Admin',
+        '9 rue de Paris 75000 Paris',
         true
     );
 

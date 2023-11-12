@@ -1,43 +1,44 @@
 <form method="post">
-    <fieldset class="uk-fieldset">
+	<fieldset class="uk-fieldset">
 
-        <legend class="uk-legend">Nouveau service</legend>
+		<legend class="uk-legend">Nouveau service</legend>
 
-        <div class="uk-margin">
-            <input class="uk-input" type="text" name="name" placeholder="Nom" value="{{ service.name }}" aria-label="Input">
-        </div>
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="name" placeholder="Nom" value="{{ service.name }}" aria-label="Input">
+		</div>
 
-        <div class="uk-margin">
-            <textarea  id="summernote" class="uk-textarea" rows="5" name="description" placeholder="Description" aria-label="Textarea">{{ service.description }}</textarea>
-        </div>
+		<div class="uk-margin">
+			<textarea id="summernote" class="uk-textarea" rows="5" name="description" placeholder="Description" aria-label="Textarea">{{ service.description }}</textarea>
+		</div>
 
-        <div class="uk-margin">
-            <div class="uk-inline">
-                <span class="uk-form-icon uk-form-icon-flip">€</span>
-                <input class="uk-input" type="number" name="price" value="{{ service.price }}" aria-label="Not clickable icon">
-            </div>
-        </div>
+		<div class="uk-margin">
+			<div class="uk-inline">
+				<span class="uk-form-icon uk-form-icon-flip">€</span>
+				<input class="uk-input" type="number" name="price" value="{{ service.price }}" aria-label="Not clickable icon">
+			</div>
+		</div>
 
-        {% if service.image is defined %}
-            {% set image = service.image %}
-        {% else %}
-            {% set image = "/assets/images/course.jpeg" %}
-        {% endif %}
+		{% if service.image is defined %}
+			{% set image = service.image %}
+		{% else %}
+			{% set image = "/assets/images/course.jpeg" %}
+		{% endif %}
 
-        <div class="uk-margin">
-            <input class="uk-input" type="text" name="image" placeholder="Chemin en dur" value="{{ image }}" aria-label="Input">
-        </div>
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="image" placeholder="Chemin en dur" value="{{ image }}" aria-label="Input">
+		</div>
 
-        {% if service.id is defined %}
-            {% set button = "Modifier" %}
-        {% else %}
-            {% set button = "Ajouter" %}
-        {% endif %}
+		{% if service.id is defined %}
+			{% set button = "Modifier" %}
+		{% else %}
+			{% set button = "Ajouter" %}
+		{% endif %}
 
-        <input type="hidden" name="id" value="{{ service.id }}">
+		<input type="hidden" name="id" value="{{ service.id }}">
 
-        <div class="uk-margin">
-            <button type="submit" name="submit" class="uk-button uk-button-primary">{{button}} Service</button>
-        </div>
-    </fieldset>
+		<div class="uk-margin">
+			<button type="submit" name="submit" class="uk-button uk-button-primary">{{button}}
+				Service</button>
+		</div>
+	</fieldset>
 </form>

@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<section class="uk-container">
+		<h2 class="uk-heading-line uk-text-center">
+			<span>Réservation service</span>
+		</h2>
+		<form class=" full-width-form" method="post" enctype="multipart/form-data">
+
+			<div class=" uk-margin">
+				<div>
+					<label class="uk-form-label" for="date">Date</label>
+					<div class="uk-form-controls">
+						<select class="uk-select" id="date" name="date" required>
+							{% for date in dates %}
+								<option value="{{ date.date }}">
+									{{ date.date }}
+								</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				{% for service in services %}
+					<div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+						<label><input class="uk-checkbox" type="checkbox" name="services[]" value="{{ service.id }}">
+							{{ service.name }}
+						</label>
+					</div>
+				{% endfor %}
+			</div>
+			<button class="uk-button uk-button-primary" type="submit">M'inscrire</button>
+
+		</form>
+	</section>
+{% endblock %}

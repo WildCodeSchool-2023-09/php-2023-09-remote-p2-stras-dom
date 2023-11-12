@@ -1,48 +1,45 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon.png">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/favicon.png">
 
-    <title>{% block title %}{% endblock %}</title>
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css" />   
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		<!-- UIkit CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css"/>
+		<link rel="stylesheet" href="/assets/css/admin.css"/> {% block stylesheet %}{% endblock %}
+		</head>
 
-    <link rel="stylesheet" href="/assets/css/admin.css" />
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    
-    {% block stylesheet %}{% endblock %}
-</head>
+		<body>
+			<div uk-grid uk-flex>
 
-<body>
-<div uk-grid>
+				<header class="uk-width-1-5 uk-padding ">
+					<h2 class="uk-padding yk-h2">Bienvenue Yavuz</h2>
+					{% include 'Admin/include/_navbar.html.twig' %}
+				</header>
 
-    <header class="uk-width-1-4 uk-padding">
-    <h2 class="uk-padding">Bienvenue Yavuz</h2>
-     {% include 'Admin/include/_navbar.html.twig' %}
-    </header>
-    
-    <main class="uk-width-expand uk-padding">
-        <h2 class="uk-padding">Dashboard</h2>
-        {% block content %}{% endblock %}
-    </main>
-</div>
-    {% block javascript %}
-    <!-- UIkit JS -->
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>    
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>    
-<!-- include summernote css/js -->
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-      $('#summernote').summernote();
-    </script>
-   
-    {% endblock %}
-</body>
-</html>
-
-
+				<main class="uk-width-expand uk-padding">
+					<h2 class="uk-padding">Dashboard</h2>
+					{% block content %}{% endblock %}
+				</main>
+			</div>
+			<!-- UIkit JS -->
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
+			<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+			<!-- include summernote css/js -->
+			<script>
+				$(document).ready(function () {
+$('#summernote').summernote();
+});
+			</script>
+			{% block javascript %}{% endblock %}
+		</body>
+	</html>

@@ -1,11 +1,32 @@
 header {
-    background-color: #1c4858;
+    background-color: #072A40;
 }
 
 main {
     background-color: #fbfbfbfb;
 }
 
-.yk-horizontale-menu {
+.uk-nav-default>li>a  {
     color: white;
+    font-size: 1rem;
+}
+
+body header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header aside {
+    padding: 2rem;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+.yk-h2 {
+    color: white;
+    font-size: 3rem;
 }

@@ -7,9 +7,11 @@
 			<li>
 				<a href="/service">Prestation</a>
 			</li>
-			<li class="uk-parent">
-				<a href="/devis">Demandez un devis</a>
-			</li>
+			{% if session.isLogin == false %}
+				<li class="uk-parent">
+					<a href="/register">Créer un compte</a>
+				</li>
+			{% endif %}
 			{% if session.isLogin == true %}
 				<li uk-dropnav="mode: click">
 					<a href="">Mon Compte
@@ -22,6 +24,9 @@
 									<a href="/admin/dashboard">Dashboard</a>
 								</li>
 							{% endif %}
+							<li>
+								<a href="/reservation">Réservez un service</a>
+							</li>
 							<li>
 								<a href="/logout">Logout</a>
 							</li>

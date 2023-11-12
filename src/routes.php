@@ -10,7 +10,8 @@ return [
     '' => ['HomeController', 'index',],
     'service' => ['ServiceController', 'index',],
     'service/show' => ['ServiceController', 'show', ['id']],
-    'devis' => ['DevisController', 'index',],
+    'register' => ['UserController', 'register',],
+    'reservation' => ['ReservationController', 'insert',],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
@@ -23,4 +24,6 @@ return [
     'admin/prestations/new' => ['PrestationsController', 'new',],
     'admin/prestations/edit' => ['PrestationsController', 'edit', ['id']],
     'admin/prestations/delete' => ['PrestationsController', 'delete', ['id']],
+    'admin/reservations' => ['ReservationController', 'index',],
+
 ];

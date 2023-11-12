@@ -23,6 +23,7 @@ class SecurityController extends AbstractController
             $user = $userManager->selectOneByEmail($credentials['email']);
             if ($user && password_verify($credentials['password'], $user['password'])) {
                 $_SESSION['isLogin'] = true;
+                $_SESSION['user_id'] = $user['id'];
                 $_SESSION['isAdmin'] = $user['isAdmin'];
                 header('Location: /');
             }
@@ -30,7 +31,6 @@ class SecurityController extends AbstractController
 
         return $this->twig->render('Security/login.html.twig', ['errors' => $errors]);
     }
-
 
     public function logout()
     {
