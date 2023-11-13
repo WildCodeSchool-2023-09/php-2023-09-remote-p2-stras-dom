@@ -2,18 +2,23 @@
 
 {% block content %}
 
-<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-flex uk-flex-middle" uk-grid>
-        <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-            <img src=" {{ service.image }}" alt="" uk-cover>
-            <canvas width="600" height="400"></canvas>
-        </div>
-        <div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title"> {{ service.name }}</h3>
-                <p> {{ service.description }}</p>
-                <div> {{ service.price }} € </div>
-            </div>
-        </div>
-    </div>
+	<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-flex uk-flex-middle" uk-grid>
+		<div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+			<img src="/uploads/{{ service.image }}" alt="{{ service.name }}" uk-cover>
+			<canvas width="600" height="400"></canvas>
+		</div>
+		<div>
+			<div class="uk-card-body">
+				<h3 class="uk-card-title">
+					{{ service.name }}</h3>
+				<p>
+					{{ service.description | raw }}</p>
+				<div>
+					{{ service.price }}
+					€
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

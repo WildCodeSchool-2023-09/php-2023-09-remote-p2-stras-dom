@@ -26,8 +26,17 @@ class PrestationsController extends AbstractController
     public function new()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir);
+            }
+            $fileName = '';
+            foreach ($_FILES['image']['tmp_name'] as $index => $tmpName) {
+                $fileName = $_FILES['image']['name'][$index];
+                move_uploaded_file($tmpName, $uploadDir . $fileName);
+            }
             $serviceManager = new ServiceManager();
-            $serviceManager->insert($_POST);
+            $serviceManager->insert($_POST, $fileName);
             header('Location: /admin/prestations');
         }
 
@@ -42,7 +51,16 @@ class PrestationsController extends AbstractController
         $serviceManager = new ServiceManager();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $serviceManager->update($_POST);
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir);
+            }
+            $fileName = '';
+            foreach ($_FILES['image']['tmp_name'] as $index => $tmpName) {
+                $fileName = $_FILES['image']['name'][$index];
+                move_uploaded_file($tmpName, $uploadDir . $fileName);
+            }
+            $serviceManager->update($_POST, $fileName);
             header('Location: /admin/prestations');
         }
 

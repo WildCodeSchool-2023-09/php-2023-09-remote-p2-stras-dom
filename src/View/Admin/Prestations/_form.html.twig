@@ -1,4 +1,4 @@
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 	<fieldset class="uk-fieldset">
 
 		<legend class="uk-legend">Nouveau service</legend>
@@ -25,7 +25,10 @@
 		{% endif %}
 
 		<div class="uk-margin">
-			<input class="uk-input" type="text" name="image" placeholder="Chemin en dur" value="{{ image }}" aria-label="Input">
+			<div uk-form-custom>
+				<input type="file" aria-label="Custom controls" name="image[]" id="image" accept="image/jpeg, image/jpg, image/png, image/webp">
+				<button class="uk-button uk-button-default" type="button" tabindex="-1">Télécharger une image</button>
+			</div>
 		</div>
 
 		{% if service.id is defined %}
